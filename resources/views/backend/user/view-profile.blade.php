@@ -33,7 +33,7 @@
                         <div class="card-body box-profile">
                             <div class="text-center">
                                 <img class="profile-user-img img-fluid img-circle"
-                                 src="{{(!empty($user->image))?url('public/upload/user_images/'.$user->image):url('public/upload/no_image.png')}}" alt="User profile picture">
+                                 src="{{(!empty($user->image))?url('public/upload/user_images/'.$user->image):url('public/upload/no_imgae .png')}}" alt="User profile picture">
 
                             </div>
 

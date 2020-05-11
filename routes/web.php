@@ -36,7 +36,7 @@ Route::prefix('users')->group(function(){
 });
 Route::prefix('profiles')->group(function(){
     Route::get('/view', 'Backend\profileController@view')->name('profile.view');
-    Route::get('/edit', 'Backend\profilerController@edit')->name('profile.edit');
+    Route::get('/edit', 'Backend\profileController@edit')->name('profile.edit');
     Route::post('/store', 'Backend\profileController@update')->name('profile.update');
     
 });

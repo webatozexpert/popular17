@@ -33,9 +33,10 @@
     <!-- jQuery -->
     <script src="{{asset('public/backend')}}/plugins/jquery/jquery.min.js"></script>
     <style>
-        .notifyjs-corner{
+        .notifyjs-corner {
             z-index: 10000 !improtant
         }
+
     </style>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/notify/0.4.2/notify.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
@@ -127,7 +128,8 @@
             $(function() {
                 $.notify("{{session()->get('success')}}", {
                     globalPosition: 'top right',
-                    className: 'success'});
+                    className: 'success'
+                });
             });
 
         </script>
@@ -149,7 +151,7 @@
     </div>
     <!-- ./wrapper -->
 
-    
+
     <!-- jQuery UI 1.11.4 -->
     <script src="{{asset('public/backend')}}/plugins/jquery-ui/jquery-ui.min.js"></script>
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
@@ -234,7 +236,18 @@
         });
 
     </script>
+    <script class="text/javascript">
+        $(document).ready(function() {
+            $('#image').change(function(e) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $('#showImage').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(e.target.files['0']);
+            });
+        });
 
+    </script>
 
 </body>
 
