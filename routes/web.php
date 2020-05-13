@@ -42,3 +42,12 @@ Route::prefix('profiles')->group(function(){
     Route::post('/password/update', 'Backend\profileController@passwordUpdate')->name('profile.password.update');
     
 });
+
+Route::prefix('logos')->group(function(){
+    Route::get('/view', 'Backend\LogoController@view')->name('logos.view');
+    Route::get('/add', 'Backend\LogoController@add')->name('logos.add');
+    Route::post('/store', 'Backend\LogoController@store')->name('logos.store');
+    Route::get('/edit/{id}', 'Backend\LogoController@edit')->name('logos.edit');
+    Route::post('/update/{id}', 'Backend\LogoController@update')->name('logos.update');
+    Route::get('/delete/{id}', 'Backend\LogoController@delete')->name('logos.delete');
+});
