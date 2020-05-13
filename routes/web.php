@@ -38,5 +38,7 @@ Route::prefix('profiles')->group(function(){
     Route::get('/view', 'Backend\profileController@view')->name('profile.view');
     Route::get('/edit', 'Backend\profileController@edit')->name('profile.edit');
     Route::post('/store', 'Backend\profileController@update')->name('profile.update');
+    Route::get('/password/view', 'Backend\profileController@passwordView')->name('profile.password.view');
+    Route::post('/password/update', 'Backend\profileController@passwordUpdate')->name('profile.password.update');
     
 });

@@ -27,21 +27,26 @@
             <!-- Main row -->
             <div class="row">
                 <!-- Left col -->
-                <section class="col-md-6 offset-md-3 ">
+                <section class="col-md-8 offset-2">
                     <!-- Profile Image -->
                     <div class="card card-primary card-outline">
                         <div class="card-body box-profile">
+                            
                             <div class="text-center">
                                 <img class="profile-user-img img-fluid img-circle"
                                  src="{{(!empty($user->image))?url('public/upload/user_images/'.$user->image):url('public/upload/no_imgae .png')}}" alt="User profile picture">
 
                             </div>
 
-                            <h3 class="profile-username text-center">{{$user->name}}</h3>
+                        <!--    <h3  class="profile-username text-center">{{$user->name}}</h3>
 
-                            <p class="text-muted text-center">{{$user->address}}</p>
+                            <p class="text-muted text-center">{{$user->address}}</p>-->
                             <table width="100%" class="table table-bordered">
                                 <tbody>
+                                    <tr>
+                                        <td>Name</td>
+                                        <td>{{$user->name}}</td>
+                                    </tr>
                                     <tr>
                                         <td>Mobile No</td>
                                         <td>{{$user->mobile}}</td>
@@ -51,15 +56,20 @@
                                         <td>{{$user->email}}</td>
                                     </tr>
                                     <tr>
+                                        <td>Address</td>
+                                        <td>{{$user->address}}</td>
+                                    </tr>
+                                    <tr>
                                         <td>Gender</td>
                                         <td>{{$user->gender}}</td>
                                     </tr>
                                 </tbody>
                             </table>
-
+                           
                             <a href="{{route('profile.edit')}}" class="btn btn-primary btn-block"><b>Edit Profile</b></a>
                         </div>
                         <!-- /.card-body -->
+                        </section>
                     </div>
                     <!-- /.card -->
 
