@@ -51,3 +51,12 @@ Route::prefix('logos')->group(function(){
     Route::post('/update/{id}', 'Backend\LogoController@update')->name('logos.update');
     Route::get('/delete/{id}', 'Backend\LogoController@delete')->name('logos.delete');
 });
+
+Route::prefix('sliders')->group(function(){
+    Route::get('/view', 'Backend\SliderController@view')->name('sliders.view');
+    Route::get('/add', 'Backend\SliderController@add')->name('sliders.add');
+    Route::post('/store', 'Backend\SliderController@store')->name('sliders.store');
+    Route::get('/edit/{id}', 'Backend\SliderController@edit')->name('sliders.edit');
+    Route::post('/update/{id}', 'Backend\SliderController@update')->name('sliders.update');
+    Route::get('/delete/{id}', 'Backend\SliderController@delete')->name('sliders.delete');
+});

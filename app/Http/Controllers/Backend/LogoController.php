@@ -10,6 +10,7 @@ use App\Model\logo;
 class LogoController extends Controller
 {
      public function view(){
+        $data['countLogo'] = Logo::count();
         $data['allData'] = Logo::all();
        
         return view('backend.logo.view-logo',$data);

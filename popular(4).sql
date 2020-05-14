@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 13, 2020 at 05:48 PM
+-- Generation Time: May 14, 2020 at 06:28 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.1
 
@@ -79,7 +79,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (5, '2014_10_12_000000_create_users_table', 1),
 (6, '2014_10_12_100000_create_password_resets_table', 1),
 (7, '2019_08_19_000000_create_failed_jobs_table', 1),
-(8, '2020_05_13_114631_create_logos_table', 2);
+(8, '2020_05_13_114631_create_logos_table', 2),
+(9, '2020_05_14_151539_create_sliders_table', 3);
 
 -- --------------------------------------------------------
 
@@ -92,6 +93,32 @@ CREATE TABLE `password_resets` (
   `token` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sliders`
+--
+
+CREATE TABLE `sliders` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `image` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `short_title` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `long_title` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_by` int(11) DEFAULT NULL,
+  `updated_by` int(11) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `sliders`
+--
+
+INSERT INTO `sliders` (`id`, `image`, `short_title`, `long_title`, `created_by`, `updated_by`, `created_at`, `updated_at`) VALUES
+(1, '202005141621slider4.jpeg', 'First Slide', 'This is a description for the first slide.', 3, 3, '2020-05-14 10:08:14', '2020-05-14 10:21:59'),
+(2, '202005141608slider5.jpg', 'First Slide', 'This is a description for the first slide.', 3, NULL, '2020-05-14 10:08:34', '2020-05-14 10:08:34'),
+(4, '202005141627slider6.jpg', 'First Slide', 'This is a description for the first slide.', 3, NULL, '2020-05-14 10:27:05', '2020-05-14 10:27:05');
 
 -- --------------------------------------------------------
 
@@ -154,6 +181,12 @@ ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
 
 --
+-- Indexes for table `sliders`
+--
+ALTER TABLE `sliders`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -174,13 +207,19 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `logos`
 --
 ALTER TABLE `logos`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `sliders`
+--
+ALTER TABLE `sliders`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `users`
