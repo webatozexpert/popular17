@@ -4,11 +4,15 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Model\Logo;
+use App\Model\Slider;
 
 class FrontendController extends Controller
 {
     public function index(){
-        return view('frontend.layouts.home');
+    	$data['logo'] = Logo::first();
+    	$data['sliders'] = Slider::all();
+        return view('frontend.layouts.home',$data);
     } 
     public function aboutUs(){
     

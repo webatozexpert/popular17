@@ -7,12 +7,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">Manage Slider</h1>
+                    <h1 class="m-0 text-dark">Manage Mission</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Slider</li>
+                        <li class="breadcrumb-item active">Mission</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -31,38 +31,38 @@
                     <!-- Custom tabs (Charts with tabs)-->
                     <div class="card">
                         <div class="card-header">
-                            <h3>Edit Slider
-                                <a class="btn btn-success float-right " href="{{route('sliders.view')}}"><i class="fa fa-plus">Slider List</i></a>
+                            <h3>Add Mission
+                                <a class="btn btn-success float-right " href="{{route('missions.view')}}"><i class="fa fa-plus">Mission List</i></a>
                             </h3>
                         </div><!-- /.card-header -->
                         <div class="card-body">
-                            <form method="post" action="{{route('sliders.update',$editData->id)}}" id="myForm" enctype="multipart/form-data">
+                            <form method="post" action="{{route('missions.store')}}" id="myForm" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-row">
                                    <div class="form-group col-md-6">
-                                     <label for="short_title">Short Title</label>
-                                     <input type="text" name="short_title" value="{{$editData->short_title}}" class="form-control" id="short_title">
-                                     <font style="color:red">{{($errors->has('short_title'))?($errors->first('short_title')):''}}</font>
+                                     <label for="title">Title</label>
+                                     <input type="text" name="title" class="form-control" id="title">
+                                     <font style="color:red">{{($errors->has('title'))?($errors->first('title')):''}}</font>
                                     </div>
-                                    <div class="form-group col-md-6">
-                                     <label for="long_title">Long Title</label>
-                                     <input type="text" name="long_title" value="{{$editData->long_title}}"  class="form-control" id="long_title">
-                                     <font style="color:red">{{($errors->has('long_title'))?($errors->first('long_title')):''}}</font>
+                                    <div class="form-group col-md-12">
+                                     <label for="description">Description</label>
+                                     <textarea  name="description" class="form-control" rows="4"></textarea>
+                                     <font style="color:red">{{($errors->has('description'))?($errors->first('description')):''}}</font>
                                     </div>
 
                                     <div class="form-group col-md-6">
                                      <label for="image">Image</label>
-                                     <input type="file" name="image" value="{{$editData->image}}" class="form-control" id="image">
+                                     <input type="file" name="image" class="form-control" id="image">
                                      <font style="color:red">{{($errors->has('image'))?($errors->first('image')):''}}</font>
                                     </div>
                                     
                                     <div class="form-group col-md-2">
-                                     <img id="showImage"  src="{{(!empty($editData->image))?url('public/upload/slider_images/'.$editData->image):url('public/upload/no_imgae .png')}}" style="width:150px; height: 160px; border:1px solid #000;" >
+                                     <img id="showImage"  src="{{url('public/upload/no_imgae .png')}}" style="width:150px; height: 160px; border:1px solid #000;" >
                                     </div>
                                     
                                     <div class="form-group col-md-2" style="padding-top:120px;">
 
-                                        <input type="submit" value="Update" class="btn btn-primary">
+                                        <input type="submit" value="Submit" class="btn btn-primary">
                                     </div>
 
                                 </div>

@@ -42,15 +42,18 @@
                                    <div class="form-group col-md-6">
                                      <label for="short_title">Short Title</label>
                                      <input type="text" name="short_title" class="form-control" id="short_title">
+                                     <font style="color:red">{{($errors->has('short_title'))?($errors->first('short_title')):''}}</font>
                                     </div>
                                     <div class="form-group col-md-6">
                                      <label for="long_title">Long Title</label>
                                      <input type="text" name="long_title" class="form-control" id="long_title">
+                                     <font style="color:red">{{($errors->has('long_title'))?($errors->first('long_title')):''}}</font>
                                     </div>
 
                                     <div class="form-group col-md-6">
                                      <label for="image">Image</label>
                                      <input type="file" name="image" class="form-control" id="image">
+                                     <font style="color:red">{{($errors->has('image'))?($errors->first('image')):''}}</font>
                                     </div>
                                     
                                     <div class="form-group col-md-2">

@@ -7,12 +7,12 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0 text-dark">Manage Slider</h1>
+                            <h1 class="m-0 text-dark">Manage Mission</h1>
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Slider</li>
+                                <li class="breadcrumb-item active">Mission</li>
                             </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
@@ -31,10 +31,10 @@
                             <!-- Custom tabs (Charts with tabs)-->
                             <div class="card">
                                 <div class="card-header">
-                                    <h3 >Slide Image list
-                                      
-                                    <a class="btn btn-success float-right " href="{{route('sliders.add')}}"><i class="fa fa-plus-circle">Add Slide</i></a>
-                                  
+                                    <h3 >Mission list
+                                      @if($countMission<1)
+                                    <a class="btn btn-success float-right " href="{{route('missions.add')}}"><i class="fa fa-plus-circle">Add Mission</i></a>
+                                  @endif
                                     </h3>
                                 </div><!-- /.card-header -->
                                 <div class="card-body">
@@ -42,22 +42,22 @@
                                     <thead>
                                         <tr>
                                             <th>Sl.</th>
-                                            <th>Short Title</th>
-                                            <th>Long Title</th>
-                                             <th>Slide Image</th>
+                                            <th>Title</th>
+                                            <th>Description</th>
+                                             <th>Image</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                       @foreach($allData as $key => $slider)
+                                       @foreach($allData as $key => $mission)
                                         <tr>
                                             <td>{{ $key+1}}</td>
-                                             <td>{{ $slider->short_title}}</td>
-                                            <td>{{ $slider->long_title}}</td>
-                                            <td><img src="{{(!empty($slider->image))?url('public/upload/slider_images/'.$slider->image):url('public/upload/no_imgae .png')}}" width="60px" height="65px;" ></td>
+                                             <td>{{ $mission->title}}</td>
+                                            <td>{{ $mission->description}}</td>
+                                            <td><img src="{{(!empty($mission->image))?url('public/upload/mission_images/'.$mission->image):url('public/upload/no_imgae .png')}}" width="60px" height="65px;" ></td>
                                             <td>
-                                            <a  class="btn btn-primary btn-sm" href="{{route('sliders.edit',$slider->id)}}"><i class="fa fa-edit" title="Edit"></i> </a>
-                                            <a id="delete" class="btn btn-danger btn-sm" href="{{route('sliders.delete',$slider->id)}}"><i class="fa fa-trash" title="Delete"></i> </a>
+                                            <a  class="btn btn-primary btn-sm" href="{{route('missions.edit',$mission->id)}}"><i class="fa fa-edit" title="Edit"></i> </a>
+                                           <a id="delete" class="btn btn-danger btn-sm" href="{{route('missions.delete',$mission->id)}}"><i class="fa fa-trash" title="Delete"></i> </a>
                                             </td>
                                         </tr>
                                         @endforeach
